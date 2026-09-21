@@ -29,6 +29,7 @@ dist/
 └── starhold/
     ├── index.html
     ├── privacy/index.html
+    ├── terms/index.html
     ├── _astro/
     └── assets/starhold/
 ```
@@ -36,6 +37,7 @@ dist/
 - `/`：ZeusAI 公司首页。
 - `/starhold/`：Star Hold 游戏首页。
 - `/starhold/privacy/`：Star Hold 隐私政策。
+- `/starhold/terms/`：Star Hold 服务条款。
 - 原有域名、页面路径和素材路径保持不变。
 - `dist/`、`.astro/` 和 `node_modules/` 为本地生成目录，不提交到 Git。
 

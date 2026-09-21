@@ -1,6 +1,6 @@
 # ZeusAI Website
 
-`zeusai.ai` 的统一网站项目，包含 ZeusAI 公司首页、Star Hold 游戏首页及隐私政策。所有源码和素材均在本仓库维护，使用 Astro 构建为可由 Nginx 托管的静态网站。
+`zeusai.ai` 的统一网站项目，包含 ZeusAI 公司首页、Star Hold 游戏首页、隐私政策及服务条款。所有源码和素材均在本仓库维护，使用 Astro 构建为可由 Nginx 托管的静态网站。
 
 ## 开发
 
@@ -16,6 +16,7 @@ npm run dev
 - 公司首页：<http://127.0.0.1:4321/>
 - Star Hold：<http://127.0.0.1:4321/starhold/>
 - 隐私政策：<http://127.0.0.1:4321/starhold/privacy/>
+- 服务条款：<http://127.0.0.1:4321/starhold/terms/>
 
 按 `Ctrl+C` 停止服务。
 
@@ -36,6 +37,7 @@ npm run preview
 | ZeusAI 公司首页 | `src/content/company-home.html`，由 `src/pages/index.astro` 原样渲染 |
 | Star Hold 游戏首页 | `src/pages/starhold/index.astro` |
 | Star Hold 隐私政策 | `src/pages/starhold/privacy/index.astro` |
+| Star Hold 服务条款 | `src/pages/starhold/terms/index.astro` |
 | Star Hold 布局与页面元数据 | `src/layouts/BaseLayout.astro` |
 | Star Hold 样式 | `src/styles/global.css` |
 | Star Hold 路径配置 | `src/config.ts` |
