@@ -1,0 +1,216 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { STARHOLD_BASE_PATH } from "../../config";
+
+const base = STARHOLD_BASE_PATH;
+const appStoreUrl = "https://apps.apple.com/app/id6761002622";
+const asset = (path: string) => `${base}assets/starhold/${path}`;
+
+const features = [
+  {
+    title: "Horde-Clearing Tower Defense",
+    image: "horde-clearing.png",
+    alt: "Star Hold TD battle screen with dense alien swarms and explosive turret fire",
+    copy: "Auto-battle chaos meets tactical planning. Watch layered firepower erase waves of alien bugs before they breach your fortress.",
+  },
+  {
+    title: "Idle Strategy",
+    image: "idle-strategy.png",
+    alt: "Star Hold TD grid showing turret placement and defensive layout",
+    copy: "Drag, place, and optimize turrets across a limited grid. Every slot matters when the swarm starts closing in.",
+  },
+  {
+    title: "Fusion Evolution",
+    image: "fusion-evolution.png",
+    alt: "Star Hold TD fusion screen showing two turrets merging into a stronger weapon",
+    copy: "Merge matching turrets into advanced forms, unlock stronger weapons, and transform a fragile outpost into a killing field.",
+  },
+  {
+    title: "Roguelike Chaos",
+    image: "roguelike-chaos.png",
+    alt: "Star Hold TD roguelike upgrade cards with beam abilities",
+    copy: "Pick 1 of 3 random upgrades mid-battle. Split beams, detonate rays, repair your base, and shape a new build every run.",
+  },
+];
+
+const loop = [
+  {
+    title: "Build the grid",
+    copy: "Deploy machine guns, flame towers, prism beams, nuclear silos, and more inside a tactical inventory layout.",
+  },
+  {
+    title: "Fuse the arsenal",
+    copy: "Combine turrets into higher tiers, match elemental damage to enemy weaknesses, and keep your best weapons online.",
+  },
+  {
+    title: "Choose your run",
+    copy: "Roguelike upgrades make each battle unstable, explosive, and different from the last.",
+  },
+  {
+    title: "Hold the sector",
+    copy: "The K-28 Star Sector is collapsing. Your fortress is humanity's last line against the alien swarm.",
+  },
+];
+---
+
+<BaseLayout
+  title="Star Hold: TD | Sci-Fi Roguelike Tower Defense"
+  description="Defend humanity's last fortress in Star Hold: TD, a sci-fi tower defense game with tactical inventory placement, turret fusion, roguelike upgrades, and endless alien swarms."
+>
+  <main class="site-shell">
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="brand" href={base}>
+          <span class="brand-mark">
+            <img src={asset("app-icon.png")} alt="Star Hold: TD app icon" />
+          </span>
+          <span>Star Hold: TD</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#gameplay">Gameplay</a>
+          <a href={`${base}privacy/`}>Privacy</a>
+          <a class="button" href={appStoreUrl} target="_blank" rel="noreferrer">Download</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Sci-Fi Roguelike Tower Defense</p>
+        <h1 id="hero-title">Star <span>Hold</span></h1>
+        <p class="hero-lede">
+          The K-28 Star Sector is engulfed in war. Build a tactical turret grid,
+          merge advanced weapons, choose unpredictable upgrades, and defend
+          humanity's last fortress from an endless alien swarm.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href={appStoreUrl} target="_blank" rel="noreferrer">
+            Download on the App Store
+          </a>
+          <a class="button secondary" href="#features">Explore Gameplay</a>
+        </div>
+        <p class="store-note">
+          Free with in-app purchases · Age Rating 9+ · Developed by ZEUS AI Limited
+        </p>
+
+        <div class="stat-strip" aria-label="Game highlights">
+          <div class="stat">
+            <strong>10+</strong>
+            <span>Turret types</span>
+          </div>
+          <div class="stat">
+            <strong>1 of 3</strong>
+            <span>Roguelike picks</span>
+          </div>
+          <div class="stat">
+            <strong>Fusion</strong>
+            <span>Upgrade system</span>
+          </div>
+          <div class="stat">
+            <strong>K-28</strong>
+            <span>Star Sector</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-frame" aria-label="Star Hold gameplay video">
+        <video
+          src={asset("storeplay-vertical.mp4")}
+          poster={asset("horde-clearing.png")}
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+      </div>
+    </section>
+
+    <section id="features" class="section" aria-labelledby="features-title">
+      <p class="eyebrow">Endless stages, pure shooting rush</p>
+      <h2 id="features-title" class="section-title">Build smarter. Merge faster. Hold longer.</h2>
+      <p class="section-copy">
+        Star Hold: TD blends auto-battle spectacle with compact tactical choices:
+        a limited grid, evolving turrets, elemental counters, and roguelike
+        upgrades that can turn one desperate defense into a screen-clearing storm.
+      </p>
+
+      <div class="features-grid">
+        {
+          features.map((feature) => (
+            <article class="feature-card">
+              <img src={asset(feature.image)} alt={feature.alt} loading="lazy" />
+              <div class="feature-content">
+                <h3>{feature.title}</h3>
+                <p>{feature.copy}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="gameplay" class="section" aria-labelledby="gameplay-title">
+      <p class="eyebrow">Tactical inventory system</p>
+      <h2 id="gameplay-title" class="section-title">Every layout decides your fate.</h2>
+      <p class="section-copy">
+        Auto-battle keeps the action moving, but the strategy is yours. Place
+        turrets with purpose, build around limited space, and stack permanent tech
+        tree progress with in-run bonuses.
+      </p>
+
+      <div class="gameplay-panel">
+        <img
+          src={asset("idle-strategy.png")}
+          alt="A defensive turret layout in Star Hold TD"
+          loading="lazy"
+        />
+        <ol class="loop-list">
+          {
+            loop.map((item) => (
+              <li>
+                <strong>{item.title}</strong>
+                <span>{item.copy}</span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="section poster" aria-labelledby="war-title">
+      <img
+        src={asset("star-sector-poster.png")}
+        alt="Star Hold TD key art showing a planetary fortress under alien invasion"
+        loading="lazy"
+      />
+      <div class="callout">
+        <p class="eyebrow">Alien swarm incoming</p>
+        <h2 id="war-title">Defend humanity's last star.</h2>
+        <p class="section-copy">
+          From frontier outpost to planetary fortress, each run tells a different
+          story. Adapt your loadout, evolve your defenses, and keep the shield
+          alive as the galaxy burns around you.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href={appStoreUrl} target="_blank" rel="noreferrer">
+            Get Star Hold: TD
+          </a>
+          <a class="button secondary" href={`${base}privacy/`}>Privacy Policy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 ZEUS AI Limited. All rights reserved.</span>
+      <div class="footer-links">
+        <a href={appStoreUrl} target="_blank" rel="noreferrer">App Store</a>
+        <a href="mailto:zeusaihkdev@gmail.com">Contact</a>
+        <a href={`${base}privacy/`}>Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
